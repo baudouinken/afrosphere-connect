@@ -1,5 +1,5 @@
 import { Button } from "@/components/ui/button";
-import { MapPin, Download, Play } from "lucide-react";
+import { MapPin, Download, Play, Search, Bell, Heart, Home, Map, Plus, Users, User } from "lucide-react";
 
 export const Hero = () => {
   return (
@@ -72,45 +72,108 @@ export const Hero = () => {
                 <div className="relative bg-foreground rounded-[2.5rem] p-2 shadow-2xl">
                   <div className="bg-background rounded-[2rem] overflow-hidden aspect-[9/19.5]">
                     {/* App Screen Preview */}
-                    <div className="h-full bg-gradient-warm p-4">
-                      {/* Status Bar */}
-                      <div className="flex justify-between items-center mb-4">
-                        <span className="text-xs text-muted-foreground">9:41</span>
-                        <div className="flex gap-1">
-                          <div className="w-4 h-2 bg-foreground/20 rounded-sm" />
-                          <div className="w-4 h-2 bg-foreground/20 rounded-sm" />
-                          <div className="w-4 h-2 bg-foreground/20 rounded-sm" />
+                    <div className="h-full bg-background flex flex-col">
+                      {/* App Header */}
+                      <div className="bg-background px-4 py-3 flex items-center justify-between border-b border-border/30">
+                        <span className="font-display font-bold text-lg">
+                          <span className="text-primary">AFRO</span>
+                          <span className="text-secondary">LIFE</span>
+                        </span>
+                        <div className="flex items-center gap-3">
+                          <Search className="w-4 h-4 text-muted-foreground" />
+                          <Bell className="w-4 h-4 text-muted-foreground" />
                         </div>
                       </div>
-                      
-                      {/* Location Badge */}
-                      <div className="flex items-center gap-2 bg-primary/10 rounded-full px-3 py-1.5 w-fit mb-4">
-                        <MapPin className="w-3 h-3 text-primary" />
-                        <span className="text-xs font-medium">Yaoundé, Cameroun</span>
-                      </div>
 
-                      {/* Stories */}
-                      <div className="flex gap-3 mb-4 overflow-hidden">
-                        {[1, 2, 3, 4].map((i) => (
-                          <div key={i} className="flex-shrink-0">
-                            <div className="w-14 h-14 rounded-full bg-gradient-hero p-0.5">
-                              <div className="w-full h-full rounded-full bg-muted" />
+                      {/* Stories Section */}
+                      <div className="px-3 py-3 flex gap-3 overflow-hidden">
+                        {/* Add Story */}
+                        <div className="flex flex-col items-center gap-1 flex-shrink-0">
+                          <div className="w-12 h-12 rounded-full bg-primary/10 border-2 border-dashed border-primary/40 flex items-center justify-center">
+                            <Plus className="w-4 h-4 text-primary" />
+                          </div>
+                          <span className="text-[9px] text-muted-foreground">Ma Story</span>
+                        </div>
+                        {/* User Stories */}
+                        {["paulek", "testab", "maria"].map((name, i) => (
+                          <div key={i} className="flex flex-col items-center gap-1 flex-shrink-0">
+                            <div className="w-12 h-12 rounded-full bg-gradient-hero p-0.5">
+                              <div className="w-full h-full rounded-full bg-gradient-to-br from-primary/30 to-secondary/30" />
                             </div>
+                            <span className="text-[9px] text-muted-foreground">{name}</span>
                           </div>
                         ))}
                       </div>
 
-                      {/* Event Cards */}
-                      <div className="space-y-3">
-                        <div className="bg-card rounded-2xl p-3 shadow-sm">
-                          <div className="w-full h-20 bg-gradient-sunset rounded-xl mb-2" />
-                          <div className="h-3 w-3/4 bg-foreground/10 rounded mb-1" />
-                          <div className="h-2 w-1/2 bg-foreground/5 rounded" />
+                      {/* Events Section */}
+                      <div className="px-3 flex-1 overflow-hidden">
+                        <div className="flex items-center justify-between mb-2">
+                          <h3 className="font-display font-bold text-sm text-primary">Événements</h3>
+                          <span className="text-[10px] text-secondary font-medium">VOIR TOUT</span>
                         </div>
-                        <div className="bg-card rounded-2xl p-3 shadow-sm opacity-80">
-                          <div className="w-full h-20 bg-gradient-gold rounded-xl mb-2" />
-                          <div className="h-3 w-2/3 bg-foreground/10 rounded mb-1" />
-                          <div className="h-2 w-1/3 bg-foreground/5 rounded" />
+
+                        {/* Category Pills */}
+                        <div className="flex gap-1.5 mb-3 overflow-hidden">
+                          <span className="px-2.5 py-1 bg-primary text-primary-foreground text-[9px] rounded-full font-medium">Tous</span>
+                          <span className="px-2.5 py-1 bg-muted text-muted-foreground text-[9px] rounded-full">Musique</span>
+                          <span className="px-2.5 py-1 bg-muted text-muted-foreground text-[9px] rounded-full">Festival</span>
+                        </div>
+
+                        {/* Event Card */}
+                        <div className="bg-card rounded-xl overflow-hidden shadow-sm mb-2">
+                          <div className="relative h-20 bg-gradient-to-br from-primary/40 via-secondary/30 to-accent/40">
+                            <button className="absolute top-2 right-2 w-6 h-6 bg-background/90 rounded-full flex items-center justify-center">
+                              <Heart className="w-3 h-3 text-destructive fill-destructive" />
+                            </button>
+                          </div>
+                          <div className="p-2.5 flex gap-2">
+                            <div className="flex flex-col items-center bg-primary/10 rounded-lg px-2 py-1">
+                              <span className="text-[8px] text-primary font-medium">DÉC</span>
+                              <span className="text-sm font-bold text-primary">20</span>
+                            </div>
+                            <div className="flex-1 min-w-0">
+                              <span className="text-[8px] text-secondary font-semibold">CONCERT</span>
+                              <h4 className="text-[10px] font-semibold truncate">Afro Night Berlin</h4>
+                              <div className="flex items-center gap-1 text-muted-foreground">
+                                <MapPin className="w-2.5 h-2.5" />
+                                <span className="text-[8px] truncate">Bergstr 5, Berlin</span>
+                              </div>
+                              <div className="flex items-center gap-1 mt-0.5">
+                                <span className="text-[8px] text-primary">♥ 12 intéressé(s)</span>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+
+                        {/* Activities Header */}
+                        <div className="flex items-center justify-between mt-2">
+                          <h3 className="font-display font-bold text-sm text-primary">Activités</h3>
+                          <span className="text-[10px] text-secondary font-medium">VOIR TOUT</span>
+                        </div>
+                      </div>
+
+                      {/* Bottom Tab Bar */}
+                      <div className="bg-background border-t border-border/30 px-2 py-2 flex items-center justify-around">
+                        <div className="flex flex-col items-center gap-0.5">
+                          <Home className="w-4 h-4 text-primary" />
+                          <span className="text-[8px] text-primary font-medium">Accueil</span>
+                        </div>
+                        <div className="flex flex-col items-center gap-0.5">
+                          <Map className="w-4 h-4 text-muted-foreground" />
+                          <span className="text-[8px] text-muted-foreground">Carte</span>
+                        </div>
+                        <div className="flex flex-col items-center gap-0.5">
+                          <div className="w-8 h-8 bg-primary rounded-full flex items-center justify-center -mt-4 shadow-lg">
+                            <Plus className="w-4 h-4 text-primary-foreground" />
+                          </div>
+                        </div>
+                        <div className="flex flex-col items-center gap-0.5">
+                          <Users className="w-4 h-4 text-muted-foreground" />
+                          <span className="text-[8px] text-muted-foreground">Ami(e)s</span>
+                        </div>
+                        <div className="flex flex-col items-center gap-0.5">
+                          <Heart className="w-4 h-4 text-muted-foreground" />
+                          <span className="text-[8px] text-muted-foreground">Favoris</span>
                         </div>
                       </div>
                     </div>
