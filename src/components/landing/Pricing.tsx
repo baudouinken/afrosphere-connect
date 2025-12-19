@@ -1,5 +1,5 @@
 import { Button } from "@/components/ui/button";
-import { Check, Sparkles } from "lucide-react";
+import { Check, Sparkles, Clock, Gift } from "lucide-react";
 
 const plans = [
   {
@@ -22,7 +22,8 @@ const plans = [
   {
     name: "PRO",
     description: "Pour les professionnels",
-    price: "15 000",
+    price: "10 000",
+    originalPrice: "15 000",
     currency: "FCFA",
     period: "/mois",
     features: [
@@ -31,10 +32,11 @@ const plans = [
       "Analytics détaillés",
       "Priorité dans les résultats",
       "Stories sponsorisées",
-      "Support prioritaire",
+      "Support prioritaire 24/7",
       "Mise en avant géolocalisée",
+      "Essai gratuit 14 jours",
     ],
-    cta: "Devenir PRO",
+    cta: "Essayer PRO gratuitement",
     variant: "hero" as const,
     popular: true,
   },
@@ -62,13 +64,32 @@ export const Pricing = () => {
   return (
     <section id="pricing" className="py-20 md:py-32 bg-muted/30 relative">
       <div className="container mx-auto px-4">
+        {/* Urgency Banner */}
+        <div className="max-w-2xl mx-auto mb-12">
+          <div className="bg-gradient-hero rounded-2xl p-6 text-center">
+            <div className="flex items-center justify-center gap-2 mb-2">
+              <Gift className="w-5 h-5 text-primary-foreground" />
+              <span className="text-primary-foreground font-display font-bold">
+                Offre de lancement
+              </span>
+            </div>
+            <p className="text-primary-foreground/90 text-sm">
+              Compte PRO à <span className="font-bold">10 000 FCFA/mois</span> au lieu de 15 000 FCFA pendant 3 mois
+            </p>
+            <div className="flex items-center justify-center gap-2 mt-3 text-primary-foreground/70 text-xs">
+              <Clock className="w-3 h-3" />
+              <span>Offre limitée - Premiers arrivés, premiers servis</span>
+            </div>
+          </div>
+        </div>
+
         {/* Section Header */}
         <div className="text-center max-w-3xl mx-auto mb-16">
           <h2 className="font-display text-3xl md:text-4xl lg:text-5xl font-bold mb-6">
             Des plans adaptés à <span className="text-gradient">tes besoins</span>
           </h2>
           <p className="text-lg text-muted-foreground">
-            Commence gratuitement et évolue avec nous.
+            Commence gratuitement et évolue avec nous. Rejoins 50 000+ utilisateurs aujourd'hui.
           </p>
         </div>
 
@@ -95,6 +116,11 @@ export const Pricing = () => {
                 <p className="text-sm text-muted-foreground mb-4">{plan.description}</p>
                 
                 <div className="flex items-baseline justify-center gap-1">
+                  {plan.originalPrice && (
+                    <span className="text-lg text-muted-foreground line-through mr-2">
+                      {plan.originalPrice}
+                    </span>
+                  )}
                   <span className="font-display text-4xl font-bold">{plan.price}</span>
                   {plan.currency && (
                     <span className="text-muted-foreground">{plan.currency}</span>
@@ -103,6 +129,12 @@ export const Pricing = () => {
                     <span className="text-muted-foreground">{plan.period}</span>
                   )}
                 </div>
+                
+                {plan.popular && (
+                  <span className="inline-block mt-2 text-xs bg-green-500/10 text-green-600 px-3 py-1 rounded-full">
+                    Économise 33% pendant 3 mois
+                  </span>
+                )}
               </div>
 
               {/* Features */}
