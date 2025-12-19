@@ -36,14 +36,21 @@ export const Hero = () => {
 
             {/* CTA Buttons */}
             <div className="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start animate-slide-up animation-delay-300">
-              <Button variant="hero" size="xl">
+              <Button variant="hero" size="xl" className="animate-pulse-glow">
                 <Download className="w-5 h-5" />
-                Télécharger l'App
+                Rejoins 50K+ utilisateurs
               </Button>
               <Button variant="outline" size="xl">
                 <Play className="w-5 h-5" />
                 Voir la démo
               </Button>
+            </div>
+            
+            {/* Urgency Note */}
+            <div className="mt-6 animate-slide-up animation-delay-400">
+              <p className="text-sm text-muted-foreground">
+                ✨ <span className="text-primary font-medium">Offre lancement :</span> Compte PRO à -33% pendant 3 mois
+              </p>
             </div>
 
             {/* Stats */}
