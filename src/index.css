@@ -66,33 +66,63 @@
   }
 
   .dark {
-    --background: 20 20% 8%;
-    --foreground: 30 20% 95%;
+    /* Deep warm background - like African night sky */
+    --background: 20 30% 6%;
+    --foreground: 35 30% 92%;
 
-    --card: 20 18% 12%;
-    --card-foreground: 30 20% 95%;
+    /* Elevated surfaces with warm undertones */
+    --card: 22 25% 10%;
+    --card-foreground: 35 30% 92%;
 
-    --popover: 20 18% 12%;
-    --popover-foreground: 30 20% 95%;
+    --popover: 22 25% 12%;
+    --popover-foreground: 35 30% 92%;
 
-    --primary: 24 95% 55%;
-    --primary-foreground: 20 25% 10%;
+    /* Vibrant sunset orange - slightly brighter for dark mode */
+    --primary: 24 95% 58%;
+    --primary-foreground: 20 40% 8%;
 
-    --secondary: 45 90% 50%;
-    --secondary-foreground: 20 25% 10%;
+    /* Warm gold - glowing in dark mode */
+    --secondary: 42 95% 55%;
+    --secondary-foreground: 20 40% 8%;
 
-    --muted: 20 15% 18%;
-    --muted-foreground: 30 15% 60%;
+    /* Earthy muted tones */
+    --muted: 22 20% 15%;
+    --muted-foreground: 30 20% 55%;
 
-    --accent: 15 70% 50%;
+    /* Deep terracotta accent */
+    --accent: 18 80% 55%;
     --accent-foreground: 0 0% 100%;
 
-    --destructive: 0 70% 50%;
+    --destructive: 0 75% 55%;
     --destructive-foreground: 0 0% 100%;
 
-    --border: 20 15% 20%;
-    --input: 20 15% 20%;
-    --ring: 24 95% 55%;
+    /* Warm borders */
+    --border: 22 20% 18%;
+    --input: 22 20% 18%;
+    --ring: 24 95% 58%;
+
+    /* Dark mode specific gradients */
+    --gradient-hero: linear-gradient(135deg, hsl(24, 95%, 50%) 0%, hsl(42, 95%, 50%) 50%, hsl(18, 80%, 45%) 100%);
+    --gradient-warm: linear-gradient(180deg, hsl(20, 30%, 6%) 0%, hsl(22, 25%, 10%) 100%);
+    --gradient-card: linear-gradient(145deg, hsl(22, 25%, 12%) 0%, hsl(20, 20%, 8%) 100%);
+    --gradient-sunset: linear-gradient(135deg, hsl(24, 95%, 50%) 0%, hsl(350, 75%, 50%) 100%);
+    --gradient-gold: linear-gradient(135deg, hsl(42, 95%, 50%) 0%, hsl(35, 90%, 50%) 100%);
+    
+    /* Dark mode shadows - subtle glow effect */
+    --shadow-sm: 0 2px 8px -2px hsl(24 95% 50% / 0.15);
+    --shadow-md: 0 8px 24px -8px hsl(24 95% 50% / 0.2);
+    --shadow-lg: 0 16px 48px -12px hsl(24 95% 50% / 0.25);
+    --shadow-glow: 0 0 50px hsl(24 95% 50% / 0.4);
+
+    /* Sidebar dark mode */
+    --sidebar-background: 20 30% 8%;
+    --sidebar-foreground: 35 30% 85%;
+    --sidebar-primary: 24 95% 58%;
+    --sidebar-primary-foreground: 20 40% 8%;
+    --sidebar-accent: 22 20% 15%;
+    --sidebar-accent-foreground: 35 30% 92%;
+    --sidebar-border: 22 20% 18%;
+    --sidebar-ring: 24 95% 58%;
   }
 }
 
